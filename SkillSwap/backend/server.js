@@ -9,6 +9,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = 'mongodb://localhost:27017/SkillSwap';
+const authRoutes = require('./routes/auth');
+
+app.use('/api/auth', authRoutes);
+
 
 // Middleware
 app.use(express.json());
